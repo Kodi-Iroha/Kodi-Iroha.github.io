@@ -103,4 +103,4 @@ theme: landscape
 deploy:
   type: git
   repository: https://github.com/<username>/<username>.github.io
-  branch: main
+  branch: hexo-test
