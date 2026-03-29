@@ -20,6 +20,24 @@ body, html {
     background-size: 52px, 52px; 
 }
 
+.outer{ 
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: flex-end; 
+    height: 100%; 
+    width: 100%; 
+    
+}
+
+.inner{ 
+
+    color: white; 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: flex-end; 
+    padding: 20px; 
+}
+
 .main-header{ 
     position: fixed; 
     top: 0; 
@@ -181,3 +199,38 @@ body, html {
     background-color: #282828;  
     
 } 
+
+.main-new-blog-show{ 
+    display: flex; 
+    justify-content: space-between; 
+    height: 300px; 
+    margin-top: 50px; 
+    padding-left: 10px; 
+    padding-right: 20px; 
+    margin-bottom: 50px; 
+
+} 
+
+/* 2. 重點在這裡！把寬度、顏色、圓角都交給 a 標籤 (.post-link) */
+.post-link {
+    display: block;
+    width: 20%;            /* 把寬度搬過來這裡！ */
+    background-color: red; /* 把預設的紅色搬過來這裡！ */
+    border-radius: 10px;   /* 把圓角也搬過來這裡！ */
+    text-decoration: none; 
+    color: inherit;        
+    transition: all 0.3s ease; /* 變色滑順魔法 */
+}
+
+/* 3. 滑鼠移上去時，讓 a 標籤變色 */
+.post-link:hover {
+    background-color: #f9f9f9; /* 變成淺灰色 */
+    color: #333;               /* 小提醒：因為背景變淺了，文字可能要變深才看得清楚喔！ */
+}
+
+/* 4. 裡面的 article 現在只要乖乖負責穿透跟內距就好了！ */
+.post-item {
+    pointer-events: none; /* 滑鼠穿透 */
+    padding: 20px;        /* 內部的留白 */
+    margin: 0;            /* 確保不會有奇怪的邊界 */
+}

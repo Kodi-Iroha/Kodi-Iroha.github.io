@@ -1,1 +1,33 @@
-<%- partial('_partial/archive', {expand: true, index: true}) %>
+<!-- 這是你的 banner -->
+<section class="main-pages"> 
+    <!-- 你的 iroha-container 內容 -->
+     <figure class="iroha-container"> 
+                <img src="image/Iroha.webp" alt="Sakayori Iroha"> 
+                <div class="iroha-container-content"> 
+                    <h1 class="main-title">PROJECT-IROHA</h1> 
+                    <div class="main-sub-box"> 
+                        <h2 class="main-subtitle">BY</h2> 
+                        <h1 class="main-name">KODI</h1> 
+                    </div> 
+                </div>  
+            </figure>
+</section> 
+
+<!-- 這是 Hexo 自動抓文章的地方 -->
+<section class="main-new-blog-show"> 
+    <% site.posts.sort('-date').limit(5).each(function(post){ %>
+        <!-- 這裡是用 a 包住整塊 -->
+        <a href="<%- url_for(post.path) %>" class="post-link">
+            <article class="post-item">
+                <h2><%= post.title %></h2> <!-- 把多餘的 </a> 刪掉 -->
+                <span class="post-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+                <p><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+            </article>
+        </a> 
+    <% }) %>
+</section>
+
+<!-- 這是你的 tools -->
+<section class="main-tools"> 
+    <!-- 你的工具區內容 -->
+</section>

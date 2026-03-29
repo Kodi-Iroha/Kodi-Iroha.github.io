@@ -1,14 +1,14 @@
-<footer id="footer">
-  <% if (theme.sidebar === 'bottom'){ %>
-    <%- partial('_partial/sidebar') %>
-  <% } %>
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      <% if (theme.copyright){ %>
-        <%- render(theme.copyright, 'pug'); %>
-      <% } %>
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-      <%= __('powered_by') %> <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+<div class="footer-container"> 
+    <div class="footer-container-img"></div>
+    <footer class="footer">
+        <% if (theme.sidebar === 'bottom'){ %>
+            <%- partial('sidebar') %>
+        <% } %>
+        <div class="outer">
+            <div id="footer-info" class="inner">
+                &copy; <%= date(new Date(), 'YYYY') %> <%= config.author %><br> 
+
+            </div>
+        </div>
+    </footer>
+</div>

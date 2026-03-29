@@ -39,10 +39,11 @@ fancybox: true
 #   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></br>
 copyright:
 
+
 # ===============
 # Sidebar
 # ===============
-# Sidebar style. You can choose `left`, `right`, `bottom` or `false`.
+# Sidebar style. You can choose `left`, `right`, `bottom` or `false`. 
 sidebar: right
 # Widgets displaying in sidebar
 widgets:
@@ -90,3 +91,5 @@ valine:
   lang: zh-cn # i18n: zh-cn/en
   placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
+
+

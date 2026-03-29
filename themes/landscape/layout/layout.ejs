@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <%- partial('_partial/head') %>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-      <div class="outer">
-        <section id="main"><%- body %></section>
-        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
-          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        <% } %>
-      </div>
-      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-    </div>
-    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-    <%- partial('_partial/after-footer') %>
+
+<body class="main-background">
+  <%- partial('_partial/header') %>
+  
+  <div class="main-content">
+    <%- body %> <!-- 這個 body 就是 Hexo 自動幫你放入 index.ejs 或 post.ejs 的內容 -->
   </div>
+
+  <%- partial('_partial/footer') %>
+  
+  <!-- 如果有需要引入 script，可以在這裡加 -->
+  <%- js('js/script.js') %>
 </body>
 </html>
