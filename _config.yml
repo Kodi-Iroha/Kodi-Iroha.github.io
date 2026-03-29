@@ -103,4 +103,4 @@ theme: landscape
 deploy:
   type: git
   repository: https://github.com/ryu-opal/ryu-opal.github.io.git
-  branch: hexo-test
+  branch: hexo-deploy
