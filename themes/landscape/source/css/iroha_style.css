@@ -233,4 +233,28 @@ body, html {
     pointer-events: none; /* 滑鼠穿透 */
     padding: 20px;        /* 內部的留白 */
     margin: 0;            /* 確保不會有奇怪的邊界 */
+} 
+
+.article-inner {
+    background-color: #ffffff; /* 紙張的顏色 */
+    padding: 40px;            /* 讓內容跟邊緣有間距，才不會太擠 */
+    margin-top: 80px;         /* 和上方的 Header 拉開距離 */
+    border-radius: 8px;       /* 稍微圓角，看起來比較溫柔 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 給個淡淡的陰影，讓它浮起來！ */
+    max-width: 800px;         /* 限制寬度，這樣閱讀起來不會因為太寬而很累 */
+    margin-left: auto;        /* 水平置中 */
+    margin-right: auto;
+} 
+
+figure.highlight { position: relative !important; }
+.copy-btn {
+    position: absolute;
+    top: 5px; right: 5px;
+    padding: 3px 8px; font-size: 12px;
+    color: #fff; background: rgba(0,0,0,0.5);
+    border: none; border-radius: 4px;
+    cursor: pointer; opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 99;
 }
+figure.highlight:hover .copy-btn { opacity: 1; } 

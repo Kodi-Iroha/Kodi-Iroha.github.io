@@ -6,12 +6,14 @@
   <%- partial('_partial/header') %>
   
   <div class="main-content">
-    <%- body %> <!-- 這個 body 就是 Hexo 自動幫你放入 index.ejs 或 post.ejs 的內容 -->
+    <%- body %>
   </div>
 
   <%- partial('_partial/footer') %>
   
-  <!-- 如果有需要引入 script，可以在這裡加 -->
+  <!-- 就是這裡！加這一行，把 after-footer 邀請進來 -->
+  <%- partial('_partial/after-footer') %>
+  
   <%- js('js/script.js') %>
 </body>
 </html>

@@ -1,46 +1,27 @@
-<% if (theme.disqus_shortname){ %>
+<!-- 1. 先引入 jQuery -->
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+<!-- 2. 再加入複製按鈕的邏輯 -->
 <script>
-  var disqus_shortname = '<%= theme.disqus_shortname %>';
-  <% if (page.permalink){ %>
-  var disqus_url = '<%= page.permalink %>';
-  <% } %>
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.async = true;
-    dsq.src = 'https://' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<% } %>
-
-<%- js('js/jquery-3.6.4.min.js') %>
-
-<% if (theme.fancybox){ %>
-  <%- js('fancybox/jquery.fancybox.min.js') %>
-<% } %>
-
-<%- js('js/script') %>
-<%- partial('gauges-analytics') %>
-
-<% if(theme.valine.enable && theme.valine.appId && theme.valine.appKey){ %>
-  <%- js('https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js') %>
-<script>
-    var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = '<%= theme.valine.guest_info %>'.split(',').filter(function(item){
-        return GUEST_INFO.indexOf(item) > -1
+  console.log("複製按鈕代碼開始執行...");
+  window.addEventListener("load", function() {
+    var blocks = document.querySelectorAll('figure.highlight');
+    console.log("找到 " + blocks.length + " 個程式碼區塊");
+    
+    blocks.forEach(function(block) {
+      block.style.position = 'relative';
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.innerText = 'Copy';
+      block.appendChild(btn);
+      
+      btn.addEventListener('click', function() {
+        var code = block.querySelector('td.code').innerText;
+        navigator.clipboard.writeText(code).then(function() {
+          btn.innerText = 'Copied!';
+          setTimeout(function() { btn.innerText = 'Copy'; }, 2000);
+        });
+      });
     });
-    var notify = '<%= theme.valine.notify %>' == true;
-    var verify = '<%= theme.valine.verify %>' == true;
-    new Valine({
-        el: '.vcomment',
-        notify: notify,
-        verify: verify,
-        appId: "<%= theme.valine.appId %>",
-        appKey: "<%= theme.valine.appKey %>",
-        placeholder: "<%= theme.valine.placeholder %>",
-        pageSize:'<%= theme.valine.pageSize %>',
-        avatar:'<%= theme.valine.avatar %>',
-        lang:'<%= theme.valine.lang %>'
-    });
+  });
 </script>
-<% } %>
