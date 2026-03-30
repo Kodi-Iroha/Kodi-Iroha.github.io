@@ -1,8 +1,17 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="h-entry article article-type-<%= post.layout %>" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-    <%- partial('post/category') %>
-  </div>
+<div class="article-meta">
+  <time class="article-date" datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
+    Posted: <%= post.date.format('YYYY-MM-DD') %>
+  </time>
+  
+  <% if (post.updated && post.updated > post.date) { %>
+    <time class="article-date" datetime="<%= date_xml(post.updated) %>" itemprop="dateModified" style="margin-left: 10px; color: #888; font-style: italic;">
+      Updated: <%= post.updated.format('YYYY-MM-DD') %>
+    </time>
+  <% } %>
+
+  <%- partial('post/category') %>
+</div>
   <div class="article-inner">
     <%- partial('post/gallery') %>
     <% if (post.link || post.title){ %>
