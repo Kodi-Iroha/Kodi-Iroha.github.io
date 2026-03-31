@@ -1,24 +1,15 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="h-entry article article-type-<%= post.layout %>" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-<div class="article-meta">
-  <time class="article-date" datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
-    Posted: <%= post.date.format('YYYY-MM-DD') %>
-  </time>
-  
-  <% if (post.updated && post.updated > post.date) { %>
-    <time class="article-date" datetime="<%= date_xml(post.updated) %>" itemprop="dateModified" style="margin-left: 10px; color: #888; font-style: italic;">
-      Updated: <%= post.updated.format('YYYY-MM-DD') %>
-    </time>
-  <% } %>
+<article id="<%= post.layout %>-<%= post.slug %>" class="h-entry article article-type-<%= post.layout %>" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"> 
 
-  <%- partial('post/category') %>
-</div>
   <div class="article-inner">
     <%- partial('post/gallery') %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'p-name article-title'}) %>
       </header>
-    <% } %>
+    <% } %> 
+    <div class="article-meta">
+      <span><i class="fa fa-calendar"></i> <%= post.date.format('YYYY-MM-DD') %></span>
+      </div>
     <div class="e-content article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
@@ -32,18 +23,10 @@
       <% } %>
     </div>
     <footer class="article-footer">
-      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" data-title="<%= post.title %>" class="article-share-link"><span class="fa fa-share"><%= __('share') %></span></a>
-      <% if (post.comments && theme.disqus_shortname){ %>
-        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><span class="fa fa-comment"><%= __('comment') %></span></a>
-      <% } %>
-      <% if (post.comments && theme.valine.enable && theme.valine.appId && theme.valine.appKey ){ %>
-        <a href="<%- url_for(post.path) %>#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count fa fa-comment" data-xid="<%- url_for(post.path) %>" itemprop="commentCount"></span>
-          <%= __('comment') %>
-        </a>
-      <% } %>
-      <%- partial('post/tag') %>
-    </footer>
+  <div class="article-footer-tags">
+    <%- partial('post/tag') %>
+  </div>
+</footer>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>

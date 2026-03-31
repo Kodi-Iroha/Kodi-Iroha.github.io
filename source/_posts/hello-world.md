@@ -1,5 +1,10 @@
 ---
-title: Hello World
+title: Hello World 
+date: 2026-03-31 17:54:00
+tags:
+  - 生活
+  - 技術
+  - Hexo
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 

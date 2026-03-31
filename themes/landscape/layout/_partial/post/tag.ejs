@@ -1,6 +1,10 @@
 <% if (post.tags && post.tags.length){ %>
-  <%- list_tags(post.tags, {
-    show_count: false,
-    class: 'article-tag'
-  }) %>
+  <div class="article-tag-list">
+    <% post.tags.each(function(tag){ %>
+      <!-- 我們用 tag.name 來當作 class 的一部分 -->
+      <a class="article-tag tag-<%= tag.name %>" href="<%- url_for(tag.path) %>">
+        #<%= tag.name %>
+      </a>
+    <% }) %>
+  </div>
 <% } %>

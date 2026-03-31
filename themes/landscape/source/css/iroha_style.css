@@ -3,7 +3,8 @@ body, html {
     font-family: "LINE Seed JP";
     font-weight: 400;
     font-style: normal;
-    min-height: 200vh;  
+    height: 100%; 
+
     padding: 0; 
     margin: 0; 
     display: flex; 
@@ -176,6 +177,8 @@ body, html {
 } 
 
 .main-content{ 
+    margin-top: 100px; 
+
     flex: 1; 
 
 }
@@ -238,12 +241,14 @@ body, html {
 .article-inner {
     background-color: #ffffff; /* 紙張的顏色 */
     padding: 40px;            /* 讓內容跟邊緣有間距，才不會太擠 */
-    margin-top: 80px;         /* 和上方的 Header 拉開距離 */
+    margin-top: 20px;         /* 和上方的 Header 拉開距離 */
     border-radius: 8px;       /* 稍微圓角，看起來比較溫柔 */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 給個淡淡的陰影，讓它浮起來！ */
     max-width: 800px;         /* 限制寬度，這樣閱讀起來不會因為太寬而很累 */
     margin-left: auto;        /* 水平置中 */
-    margin-right: auto;
+    margin-right: auto; 
+    margin-bottom: 50px; 
+
 } 
 
 figure.highlight { position: relative !important; }
@@ -256,5 +261,44 @@ figure.highlight { position: relative !important; }
     cursor: pointer; opacity: 0;
     transition: opacity 0.3s;
     z-index: 99;
-}
+} 
+
 figure.highlight:hover .copy-btn { opacity: 1; } 
+
+.article-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee; /* 加一條淡淡的橫線，區分內文 */
+  display: flex;
+  justify-content: flex-start; /* 讓標籤靠左對齊 */
+}
+
+.article-footer-tags {
+  /* 如果你的 tags 有特定的 class，可以在這裡調整標籤的圓角、顏色 */
+  font-size: 0.9rem;
+} 
+
+/* 預設的標籤樣式 */
+.article-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 0 5px 5px 0;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #fff; /* 文字設為白色，這樣背景深色才看得清楚 */
+  transition: opacity 0.3s;
+}
+
+.article-tag:hover {
+  opacity: 0.8;
+}
+
+/* 這裡開始定義不同標籤的顏色 */
+.tag-Hexo { background-color: #4e4e4e; }   /* Hexo 標籤用灰色 */
+.tag-技術 { background-color: #3498db; }    /* 技術文章用藍色 */
+.tag-生活 { background-color: #e67e22; }    /* 生活日記用橘色 */
+.tag-學習 { background-color: #27ae60; }    /* 學習筆記用綠色 */
+
+/* 如果標籤名稱有英文空格，CSS 類名可能會出問題，建議標籤盡量用單詞喔！ */  
+
