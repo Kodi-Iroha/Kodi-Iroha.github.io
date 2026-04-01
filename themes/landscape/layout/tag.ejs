@@ -1,1 +1,18 @@
-<%- partial('_partial/archive', {expand: false, index: true}) %>
+<div class="tag-page-container">
+    <!-- 1. 醒目的標籤提示在這裡！ -->
+    <h1 class="tag-title">🏷️ 目前標籤：<span><%= page.tag %></span></h1>
+
+    <!-- 2. 開始把文章寶寶們一張一張列出來 (迴圈魔法) -->
+    <div class="tag-post-list">
+        <% page.posts.each(function(post) { %>
+            <!-- 這裡換成你想要的 tag-post-link 囉！ -->
+            <a href="<%- url_for(post.path) %>" class="tag-post-link">
+                <article class="tag-post-item">
+                    <h2 class="tag-post-title"><%= post.title %></h2>
+                    <span class="tag-post-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+                    <p class="tag-post-excerpt"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+                </article>
+            </a>
+        <% }); %>
+    </div>
+</div>

@@ -16,12 +16,13 @@
 <!-- 這是 Hexo 自動抓文章的地方 -->
 <section class="main-new-blog-show"> 
     <% site.posts.sort('-date').limit(5).each(function(post){ %>
+
         <!-- 這裡是用 a 包住整塊 -->
-        <a href="<%- url_for(post.path) %>" class="post-link">
-            <article class="post-item">
-                <h2><%= post.title %></h2> <!-- 把多餘的 </a> 刪掉 -->
-                <span class="post-date"><%= post.date.format('YYYY-MM-DD') %></span> 
-                <p><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+        <a href="<%- url_for(post.path) %>" class="index-post-link">
+            <article class="index-post-item">
+                <h2 class="index-post-title"><%= post.title %></h2> <!-- 把多餘的 </a> 刪掉 -->
+                <span class="index-post-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+                <p class="index-post-excerpt"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
             </article>
         </a> 
     <% }) %>

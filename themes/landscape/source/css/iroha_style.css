@@ -203,9 +203,11 @@ body, html {
     
 } 
 
-.main-new-blog-show{ 
-    display: flex; 
-    justify-content: space-between; 
+.main-new-blog-show{  
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
+    gap: 20px; 
+
     height: 300px; 
     margin-top: 50px; 
     padding-left: 10px; 
@@ -215,28 +217,46 @@ body, html {
 } 
 
 /* 2. 重點在這裡！把寬度、顏色、圓角都交給 a 標籤 (.post-link) */
-.post-link {
-    display: block;
-    width: 20%;            /* 把寬度搬過來這裡！ */
-    background-color: red; /* 把預設的紅色搬過來這裡！ */
-    border-radius: 10px;   /* 把圓角也搬過來這裡！ */
-    text-decoration: none; 
-    color: inherit;        
-    transition: all 0.3s ease; /* 變色滑順魔法 */
-}
+.index-post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
+    height: 100%; /* 讓並排的卡片都一樣高 */
+    box-sizing: border-box;
 
-/* 3. 滑鼠移上去時，讓 a 標籤變色 */
-.post-link:hover {
-    background-color: #f9f9f9; /* 變成淺灰色 */
-    color: #333;               /* 小提醒：因為背景變淺了，文字可能要變深才看得清楚喔！ */
-}
+    /* 把漂亮的衣服搬到這裡來囉～✨ */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s; 
 
-/* 4. 裡面的 article 現在只要乖乖負責穿透跟內距就好了！ */
-.post-item {
-    pointer-events: none; /* 滑鼠穿透 */
-    padding: 20px;        /* 內部的留白 */
-    margin: 0;            /* 確保不會有奇怪的邊界 */
 } 
+
+.index-post-link:hover{ 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+
+}
+
+.index-post-title{ 
+    margin: 0 0 10px 0; 
+    color: #2c3e50; 
+
+} 
+
+.index-post-date{ 
+    font-size: 0.9rem; 
+    color: #888; 
+
+}
+
+.index-post-excerpt{ 
+    margin-top: 10px; 
+    color: #555; 
+    line-height: 1.5; 
+
+}
 
 .article-inner {
     background-color: #ffffff; /* 紙張的顏色 */
@@ -251,7 +271,12 @@ body, html {
 
 } 
 
-figure.highlight { position: relative !important; }
+figure.highlight { 
+    position: relative !important;
+    background-color: #30333b; 
+    color: white; 
+    
+}
 .copy-btn {
     position: absolute;
     top: 5px; right: 5px;
@@ -302,3 +327,65 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 
 /* 如果標籤名稱有英文空格，CSS 類名可能會出問題，建議標籤盡量用單詞喔！ */  
 
+/*  */ 
+
+/* 醒目提示的標題魔法 */
+.tag-title {
+    font-size: 2em;
+    color: #333; /* 標題顏色 */
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #ccc; /* 下面加一條可愛的虛線 */
+    padding-bottom: 10px;
+}
+
+.tag-title span {
+    color: #ff6b6b; /* 讓標籤名字變成特別的顏色！ */
+}
+
+/* 卡片列表排版 */
+.tag-post-list {
+    display: grid; /* 開啟網格魔法 */
+    /* 下面這行超聰明！它會讓卡片自動並排，如果螢幕太小就會自動換行喔！ */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; /* 卡片跟卡片之間的距離 */ 
+
+}
+
+/* 超連結不要有醜醜的底線 */
+.tag-post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
+    height: 100%; /* 讓並排的卡片都一樣高 */
+    box-sizing: border-box;
+
+    /* 把漂亮的衣服搬到這裡來囉～✨ */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s; 
+
+}
+
+.tag-post-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px  15px rgba(0, 0, 0, 0.15);
+} 
+
+
+.tag-post-title {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.tag-post-date {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.tag-post-excerpt {
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.5;
+} 
