@@ -1,8 +1,25 @@
-<article class="archive-article archive-type-<%= post.layout %>">
+<article class="archive-article-card"> <!-- 這是我們的盒子 -->
   <div class="archive-article-inner">
+    
     <header class="archive-article-header">
-      <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D'}) %>
+      <!-- 標題 -->
       <%- partial('post/title', {class_name: 'archive-article-title'}) %>
+      
+      <!-- 日期與標籤 -->
+      <div class="archive-article-meta">
+        <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'YYYY-MM-DD'}) %>
+        <%- partial('post/tag', {class_name: 'archive-article-tag'}) %>
+      </div>
     </header>
+
+    <!-- 摘要 (Blurb/Excerpt) -->
+    <div class="archive-article-entry">
+      <% if (post.excerpt){ %>
+        <%- post.excerpt %>
+      <% } else { %>
+        <p><%= post.content.replace(/<[^>]+>/g, '').substring(0, 100) %>...</p>
+      <% } %>
+    </div>
+
   </div>
-</article>
+</article> 
