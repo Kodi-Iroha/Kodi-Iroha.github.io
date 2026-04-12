@@ -327,67 +327,59 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 .tag-生活 { background-color: #e67e22; }    /* 生活日記用橘色 */
 .tag-學習 { background-color: #27ae60; }    /* 學習筆記用綠色 */
 
-/* 如果標籤名稱有英文空格，CSS 類名可能會出問題，建議標籤盡量用單詞喔！ */  
 
-/*  */ 
-
-/* 醒目提示的標題魔法 */
-.tag-title {
+.LT-main-title {
     font-size: 2em;
     color: #333; /* 標題顏色 */
     margin-bottom: 20px;
-    border-bottom: 2px dashed #ccc; /* 下面加一條可愛的虛線 */
+    border-bottom: 2px dashed #ccc; 
     padding-bottom: 10px;
-}
+} 
 
-.tag-title span {
+.LT-main-title span {
     color: #ff6b6b; /* 讓標籤名字變成特別的顏色！ */
 }
 
-/* 卡片列表排版 */
-.tag-post-list {
-    display: grid; /* 開啟網格魔法 */
-    /* 下面這行超聰明！它會讓卡片自動並排，如果螢幕太小就會自動換行喔！ */
+
+.LT-postlist{
+    display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-    gap: 20px; /* 卡片跟卡片之間的距離 */ 
-
-}
-
-/* 超連結不要有醜醜的底線 */
-.tag-post-link {
+    gap: 20px; 
+} 
+ 
+.LT-postlink{ 
     text-decoration: none;
     color: inherit;
-    display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
-    height: 100%; /* 讓並排的卡片都一樣高 */
+    display: block; 
+    height: 100%; 
     box-sizing: border-box;
-
-    /* 把漂亮的衣服搬到這裡來囉～✨ */
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s; 
+    transition: transform 0.2s, box-shadow 0.2s;  
 
-}
+} 
 
-.tag-post-link:hover {
+.LT-poatlink:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px  15px rgba(0, 0, 0, 0.15);
 } 
 
 
-.tag-post-title {
+.LT-post-title{
     margin: 0 0 10px 0;
     color: #2c3e50;
 }
 
-.tag-post-date {
+.LT-post-date{
     font-size: 0.9em;
     color: #888;
 }
 
-.tag-post-excerpt {
+.LT-post-blurb{
     margin-top: 10px;
     color: #555;
     line-height: 1.5;
 } 
+ 

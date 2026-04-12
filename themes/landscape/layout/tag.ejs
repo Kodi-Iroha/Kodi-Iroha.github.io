@@ -1,16 +1,15 @@
-<div class="tag-page-container">
-    <!-- 1. 醒目的標籤提示在這裡！ -->
-    <h1 class="tag-title">🏷️ 目前標籤：<span><%= page.tag %></span></h1>
+<div class="layout-tag">
+    <h1 class="LT-main-title">🏷️ 目前標籤：<span><%= page.tag %></span></h1>
 
     <!-- 2. 開始把文章寶寶們一張一張列出來 (迴圈魔法) -->
-    <div class="tag-post-list">
+    <div class="LT-postlist">
         <% page.posts.each(function(post) { %>
             <!-- 這裡換成你想要的 tag-post-link 囉！ -->
-            <a href="<%- url_for(post.path) %>" class="tag-post-link">
-                <article class="tag-post-item">
-                    <h2 class="tag-post-title"><%= post.title %></h2>
-                    <span class="tag-post-date"><%= post.date.format('YYYY-MM-DD') %></span> 
-                    <p class="tag-post-excerpt"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+            <a href="<%- url_for(post.path) %>" class="LT-postlink">
+                <article>
+                    <h2 class="LT-post-title"><%= post.title %></h2>
+                    <span class="LT-post-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+                    <p class="LT-post-blurb"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
                 </article>
             </a>
         <% }); %>
