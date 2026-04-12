@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <%- partial('_partial/head') %>
-
-<body class="main-background">
+<body class="layout-layout-background">
   <%- partial('_partial/header') %>
-  
-  <div class="main-content">
+  <div class="layout-layout-content">
     <%- body %> 
   </div>
-
   <%- partial('_partial/footer') %>
-  
-  <!-- 就是這裡！加這一行，把 after-footer 邀請進來 -->
   <%- partial('_partial/after-footer') %>
-  
   <%- js('js/script.js') %>
 </body>
-</html>
+</html> 

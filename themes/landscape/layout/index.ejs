@@ -1,34 +1,31 @@
 
-<section class="main-pages"> 
-    <!-- 你的 iroha-container 內容 -->
-     <figure class="iroha-container"> 
+<section class="layout-index-cover"> 
+     <figure class="LIC-container"> 
                 <img src="image/Iroha.webp" alt="Sakayori Iroha"> 
-                <div class="iroha-container-content"> 
-                    <h1 class="main-title">PROJECT-IROHA</h1> 
-                    <div class="main-sub-box"> 
-                        <h2 class="main-subtitle">BY</h2> 
-                        <h1 class="main-name">KODI</h1> 
+                <div class="LIC-information"> 
+                    <h1 class="LIC-information-main-title">PROJECT-IROHA</h1> 
+                    <div class="LIC-information-subcontent"> 
+                        <h2 class="LIC-information-subtitle">BY</h2> 
+                        <h1 class="LIC-information-KODI">KODI</h1> 
                     </div> 
                 </div>  
-            </figure>
+        </figure>
 </section> 
-<!-- transition to blog  -->
 
-<section class="main-new-blog-show"> 
-    <% site.posts.sort('-date').limit(5).each(function(post){ %>
 
-        <!-- 這裡是用 a 包住整塊 -->
-        <a href="<%- url_for(post.path) %>" class="index-post-link">
-            <article class="index-post-item">
-                <h2 class="index-post-title"><%= post.title %></h2> <!-- 把多餘的 </a> 刪掉 -->
-                <span class="index-post-date"><%= post.date.format('YYYY-MM-DD') %></span> 
-                <p class="index-post-excerpt"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+<section class="layout-index-blogpost"> 
+    <% site.posts.sort('-date').limit(5).each(function(post){ %> 
+        <a href="<%- url_for(post.path) %>" class="LIB-box">
+            <article>
+                <h2 class="LIB-title"><%= post.title %></h2>
+                <span class="LIB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+                <p class="LIB-blurb"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
             </article>
         </a> 
     <% }) %>
 </section>
 
 <!-- 這是你的 tools -->
-<section class="main-tools"> 
+<section class="layout-index-tools"> 
     <!-- 你的工具區內容 -->
 </section>
