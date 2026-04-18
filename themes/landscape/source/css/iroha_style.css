@@ -161,7 +161,7 @@ body, html {
     margin: 0; 
 } 
 
-.LIC-information-main-subcontent{ 
+.LIC-information-subcontent{ 
     display: flex; 
     margin: 0; 
 }
@@ -180,7 +180,6 @@ body, html {
 
 .layout-layout-content{ 
     margin-top: 100px; 
-
     flex: 1; 
 
 }
