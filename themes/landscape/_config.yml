@@ -59,7 +59,7 @@ widgets:
 archive_type: 'monthly'
 show_count: false
 # How many posts display in Home page.
-recent_posts_limits: 5
+recent_posts_limits: /icon.jpg
 
 # ===============
 # Miscellaneous
@@ -68,7 +68,7 @@ recent_posts_limits: 5
 google_analytics:
 gauges_analytics:
 # Favicon path
-favicon: /favicon.png
+favicon: 
 # Twitter ID
 twitter:
 fb_admins:
