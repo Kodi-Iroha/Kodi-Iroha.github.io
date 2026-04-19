@@ -39,7 +39,7 @@ body, html {
     padding: 20px; 
 }
 
-.main-header{ 
+.partial-header{ 
     position: fixed; 
     top: 0; 
     width: 100%; 
@@ -56,7 +56,7 @@ body, html {
 
 }  
 
-.main-header::after{ 
+.partial-header::after{ 
     content: ""; 
     position: absolute; 
     bottom: -2px; 
@@ -70,7 +70,7 @@ body, html {
 }
 
 
-.header-icon{ 
+.partial-header-icon-design{ 
     display: inline; 
     text-decoration: none; 
     color: inherit;  
@@ -84,7 +84,20 @@ body, html {
 
 }
 
-.header-tabs{ 
+.partial-header-icon-design h1{ 
+    margin: 0; 
+    padding-left: 10px; 
+    padding-right: 10px;  
+
+}
+
+.partial-header-icon-design img{ 
+    width: 44px;   
+    height: auto; 
+
+}
+
+.partial-header-tabs{ 
     display: flex; 
     align-items: center; 
     margin-left: auto; 
@@ -94,7 +107,7 @@ body, html {
 
 }
 
-.header-tabs a{ 
+.partial-header-tabs a{ 
     user-select: none; 
     text-decoration: none; 
     color: inherit; 
@@ -103,20 +116,7 @@ body, html {
     margin-left: 50px; 
     margin-right: 50px; 
 
-}
-
-.header-icon h1{ 
-    margin: 0; 
-    padding-left: 10px; 
-    padding-right: 10px;  
-
-}
-
-.header-icon img{ 
-    width: 44px;   
-    height: auto; 
-
-}
+} 
 
 .layout-index-cover{ 
     display: flex;

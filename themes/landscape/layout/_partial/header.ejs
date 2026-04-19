@@ -1,6 +1,6 @@
-<header class="main-header"> 
-    <!-- 點擊 Logo 自動回到首頁的魔法！ -->
-    <a href="<%- url_for() %>" class="header-icon"> 
+<header class="partial-header"> 
+
+    <a href="<%- url_for() %>" class="partial-header-icon-design"> 
         <h1>Project</h1> 
         <!-- 圖片路徑也換成 Hexo 專屬的寫法囉！ -->
         <img src="<%- url_for('/image/icon_play.svg') %>" alt="header-icon-design"> 
@@ -8,7 +8,7 @@
     </a>
     
     <!-- 讓選單變成全自動的魔法！ -->
-    <nav class="header-tabs"> 
+    <nav class="partial-header-tabs"> 
         <% for (var i in theme.menu){ %>
             <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
         <% } %>
