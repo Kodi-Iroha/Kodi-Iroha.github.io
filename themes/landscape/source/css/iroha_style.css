@@ -21,7 +21,7 @@ body, html {
     background-size: 52px, 52px; 
 }
 
-.outer{ 
+.partial-footer-outer{ 
     display: flex; 
     align-items: flex-end; 
     justify-content: flex-end; 
@@ -30,7 +30,7 @@ body, html {
     
 }
 
-.inner{ 
+.partial-footer-inner{ 
 
     color: white; 
     display: flex; 
@@ -184,19 +184,19 @@ body, html {
 
 }
 
-.footer-container{ 
+.partial-footer-container{ 
     width: 100%; 
 
 }
 
-.footer-container-img{ 
+.partial-footer-container-img{ 
     width: 100%; 
     height: 110px; 
     margin-bottom: -5px;
     background-image: url(../image/footer_design.svg);
 }
 
-.footer{ 
+.partial-footer{ 
     bottom: 0; 
     width: 100%; 
     height: 435px; 

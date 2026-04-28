@@ -1,11 +1,11 @@
-<div class="footer-container"> 
-    <div class="footer-container-img"></div>
-    <footer class="footer">
+<div class="partial-footer-container"> 
+    <div class="partial-footer-container-img"></div>
+    <footer class="partial-footer">
         <% if (theme.sidebar === 'bottom'){ %>
             <%- partial('sidebar') %>
         <% } %>
-        <div class="outer">
-            <div id="footer-info" class="inner">
+        <div class="partial-footer-outer">
+            <div id="footer-info" class="partial-footer-inner">
                 &copy; <%= date(new Date(), 'YYYY') %> <%= config.author %><br> 
 
             </div>
