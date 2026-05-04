@@ -1,5 +1,6 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+tags: 
+cover: /images/banner.jpg
 ---
