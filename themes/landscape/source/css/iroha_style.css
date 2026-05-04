@@ -224,6 +224,7 @@ body, html {
 
 }
 
+
 .LIB-post{ 
     /* display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
@@ -239,7 +240,7 @@ body, html {
     width: 400px; 
     height: 200px; 
 
-    padding: 20px; 
+
     text-decoration: none;
     color: inherit;
     display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
@@ -255,6 +256,29 @@ body, html {
 .LIB-box:hover{ 
     transform: translateY(-5px); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+}
+
+.LIB-box-content{ 
+    display: flex; 
+    height: 100%; 
+    width: 100%; 
+
+}
+
+.LIB-box-img{ 
+    width: auto; 
+    height: 100%; 
+    object-fit: cover; 
+    
+}
+
+.LIB-box-word{ 
+    display: flex; 
+    justify-content: left; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 5px; 
+    
 }
 
 .LIB-title{ 

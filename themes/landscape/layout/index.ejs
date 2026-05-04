@@ -18,15 +18,17 @@
     <div class="LIB-post">
         <% site.posts.sort('-date').limit(5).each(function(post){ %> 
             <a href="<%- url_for(post.path) %>" class="LIB-box">
-                <article>
-                    <% if (post.overpage) { %>
-                    <img src="<%= post.cover %>" alt="cover">
+                <article class="LIB-box-content">
+                    <% if (post.cover) { %>
+                    <img src="<%= post.cover%>" alt="cover" class="LIB-box-img">
                     <% }else{ %>
                     <img src="" alt="">
                     <% } %> 
-                    <h2 class="LIB-title"><%= post.title %></h2>
-                    <span class="LIB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
-                    <p class="LIB-blurb"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+                    <div class="LIB-box-word">
+                        <h2 class="LIB-title"><%= post.title %></h2>
+                        <span class="LIB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+                        <p class="LIB-blurb"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+                    </div>                    
                 </article>
             </a> 
         <% }) %>
