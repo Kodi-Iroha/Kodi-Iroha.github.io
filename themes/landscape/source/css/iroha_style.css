@@ -205,11 +205,11 @@ body, html {
 } 
 
 .layout-index-blogpost{  
-    display: grid; 
+    
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
     gap: 20px; 
+    text-align: center; 
 
-    height: 300px; 
     margin-top: 50px; 
     padding-left: 10px; 
     padding-right: 20px; 
@@ -217,27 +217,44 @@ body, html {
 
 } 
 
+.LIB-h1{ 
+    margin: 0 auto; 
+    text-align: center; 
+    padding: 20px; 
+
+}
+
+.LIB-post{ 
+    /* display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+    display: flex;          
+    flex-wrap: wrap;   
+    justify-content: center; 
+    gap: 20px;
+    align-items: stretch; 
+}
+
 /* 2. 重點在這裡！把寬度、顏色、圓角都交給 a 標籤 (.post-link) */
 .LIB-box{
+    width: 400px; 
+    height: 200px; 
+
+    padding: 20px; 
     text-decoration: none;
     color: inherit;
     display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
-    height: 100%; /* 讓並排的卡片都一樣高 */
+    
     box-sizing: border-box;
-
-    /* 把漂亮的衣服搬到這裡來囉～✨ */
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s; 
-
+    text-align: center; 
 } 
 
 .LIB-box:hover{ 
     transform: translateY(-5px); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
-
 }
 
 .LIB-title{ 

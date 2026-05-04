@@ -14,15 +14,18 @@
 
 
 <section class="layout-index-blogpost"> 
-    <% site.posts.sort('-date').limit(5).each(function(post){ %> 
-        <a href="<%- url_for(post.path) %>" class="LIB-box">
-            <article>
-                <h2 class="LIB-title"><%= post.title %></h2>
-                <span class="LIB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
-                <p class="LIB-blurb"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
-            </article>
-        </a> 
-    <% }) %>
+    <h1 class="LIB-h1">Blog posts</h1>
+    <div class="LIB-post">
+        <% site.posts.sort('-date').limit(5).each(function(post){ %> 
+            <a href="<%- url_for(post.path) %>" class="LIB-box">
+                <article>
+                    <h2 class="LIB-title"><%= post.title %></h2>
+                    <span class="LIB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+                    <p class="LIB-blurb"><%= strip_html(post.excerpt || post.content).substring(0, 100) + '...' %></p>
+                </article>
+            </a> 
+        <% }) %>
+    </div>
 </section>
 
 <!-- 這是你的 tools -->
