@@ -215,6 +215,10 @@ body, html {
     width: 100%; 
     
 } 
+.layout-archive-blog-h1{ 
+    text-align: center; 
+    
+} 
 
 .layout-archive-blog{ 
     display: flex; 
