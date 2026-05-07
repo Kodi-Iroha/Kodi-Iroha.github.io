@@ -216,6 +216,11 @@ body, html {
     
 } 
 
+.layout-archive-blog{ 
+    display: flex; 
+    
+}
+
 .LIB-h1{ 
     margin: 0 auto; 
     text-align: center; 
