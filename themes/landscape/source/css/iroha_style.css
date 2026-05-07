@@ -222,7 +222,7 @@ body, html {
     text-align: center; 
     padding: 40px 40px; 
     color: rgb(50, 144, 178); 
-    
+
     font-size: 5rem; 
 
 }
@@ -243,7 +243,7 @@ body, html {
 .LIB-box{
     width: 400px; 
     height: 200px; 
-
+    
     text-decoration: none;
     color: inherit;
     display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
