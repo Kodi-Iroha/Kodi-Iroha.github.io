@@ -205,16 +205,15 @@ body, html {
 } 
 
 .layout-index-blogpost{  
-    
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
     gap: 20px; 
     text-align: center; 
-
     margin-top: 50px; 
-    padding-left: 10px; 
-    padding-right: 20px; 
-    margin-bottom: 50px; 
 
+    margin-bottom: 30px; 
+    height: 610px; 
+    width: 100%; 
+    
 } 
 
 .LIB-h1{ 
@@ -243,7 +242,7 @@ body, html {
 .LIB-box{
     width: 400px; 
     height: 200px; 
-    
+
     text-decoration: none;
     color: inherit;
     display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
@@ -311,6 +310,25 @@ body, html {
     line-height: 1.5; 
 
 }
+
+.layout-index-tools{ 
+    text-align: center; 
+    margin-top: 50px;  
+    margin-bottom: 30px; 
+    height: 610px; 
+    width: 100%; 
+}
+
+.LIT-h1{
+    margin: 0 auto; 
+    text-align: center; 
+    padding: 40px 40px; 
+    color: rgb(50, 144, 178); 
+
+    font-size: 5rem; 
+
+}
+
 
 .article-inner {
     background-color: #ffffff; /* 紙張的顏色 */
