@@ -232,7 +232,8 @@ body, html {
     flex-wrap: wrap;   
     justify-content: center; 
     gap: 20px;
-    align-items: stretch; 
+    align-items: stretch;  
+    
 }
 
 /* 2. 重點在這裡！把寬度、顏色、圓角都交給 a 標籤 (.post-link) */
@@ -240,13 +241,12 @@ body, html {
     width: 400px; 
     height: 200px; 
 
-
     text-decoration: none;
     color: inherit;
     display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
     
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(206, 218, 216);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s; 
@@ -265,11 +265,20 @@ body, html {
 
 }
 
+.LIB-box-image{ 
+    width: 190px; 
+    height: 190px; 
+    background-color: rgb(157, 166, 165); 
+    margin: 5px 5px;
+    border-radius: 12px; 
+
+}
+
 .LIB-box-img{ 
-    width: auto; 
+    width: 100%; 
     height: 100%; 
     object-fit: cover; 
-    
+    border-radius: 12px; 
 }
 
 .LIB-box-word{ 
@@ -293,7 +302,7 @@ body, html {
 
 }
 
-.LIB-blurb{ 
+.LIB-description{ 
     margin-top: 10px; 
     color: #555; 
     line-height: 1.5; 
