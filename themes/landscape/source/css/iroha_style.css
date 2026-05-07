@@ -220,7 +220,10 @@ body, html {
 .LIB-h1{ 
     margin: 0 auto; 
     text-align: center; 
-    padding: 20px; 
+    padding: 40px 40px; 
+    color: rgb(50, 144, 178); 
+    
+    font-size: 5rem; 
 
 }
 

@@ -14,7 +14,7 @@
 
 
 <section class="layout-index-blogpost"> 
-    <h1 class="LIB-h1">Blog posts</h1>
+    <h1 class="LIB-h1">Blog posts</h1><br>
     <div class="LIB-post">
         <% site.posts.sort('-date').limit(5).each(function(post){ %> 
             <a href="<%- url_for(post.path) %>" class="LIB-box">
