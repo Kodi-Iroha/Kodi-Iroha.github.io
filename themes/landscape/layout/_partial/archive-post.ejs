@@ -1,25 +1,35 @@
-<article class="archive-article-card"> <!-- 這是我們的盒子 -->
+<article class="archive-article-card"> 
   <div class="archive-article-inner">
     
     <header class="archive-article-header">
-      <!-- 標題 -->
+
       <%- partial('post/title', {class_name: 'archive-article-title'}) %>
       
-      <!-- 日期與標籤 -->
-      <div class="archive-article-meta">
-        <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'YYYY-MM-DD'}) %>
-        <%- partial('post/tag', {class_name: 'archive-article-tag'}) %>
-      </div>
-    </header>
 
-    <!-- 摘要 (Blurb/Excerpt) -->
-    <div class="archive-article-entry">
-      <% if (post.excerpt){ %>
-        <%- post.excerpt %>
-      <% } else { %>
-        <p><%= post.content.replace(/<[^>]+>/g, '').substring(0, 100) %>...</p>
-      <% } %>
+
+    </header>
     </div>
 
   </div>
 </article> 
+
+  <a href="<%- url_for(post.path) %>" class="LIB-box">
+      <article class="LIB-box-content">
+          <div class="LIB-box-image">
+              <% if (post.cover) { %>
+              <img src="<%= post.cover%>" alt="cover" class="LIB-box-img">
+              <% }else{ %>
+              <img src="" alt="">
+              <% } %> 
+          </div>
+          <div class="LIB-box-word">
+              <h2 class="LIB-title"><%= post.title %></h2>
+              <span class="LIB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
+              <p class="LIB-description"><%= post.description %></p>     
+                <div>
+                  <%- partial('post/tag', {post: post}) %>
+                </div>    
+          </div>                    
+      </article>
+  </a> 
+
