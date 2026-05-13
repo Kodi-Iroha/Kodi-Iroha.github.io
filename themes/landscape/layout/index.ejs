@@ -30,7 +30,9 @@
                         <h2 class="LIB-title"><%= post.title %></h2>
                         <span class="LIB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
                         <p class="LIB-description"><%= post.description %></p>
-                        
+                        <div>
+                            <%- partial('_partial/post/tag', {post: post}) %>
+                        </div>    
                     </div>                    
                 </article>
             </a> 
