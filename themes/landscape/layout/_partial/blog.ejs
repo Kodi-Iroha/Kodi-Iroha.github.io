@@ -1,6 +1,8 @@
-<% page.posts.each(function(post, i){ %>
+<div>
+  <% page.posts.each(function(post, i){ %>
   <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
-<% }) %>
+  <% }) %>
+</div>
 
 <% if (page.total > 1){ %>
   <nav id="page-nav">

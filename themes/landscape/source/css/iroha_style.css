@@ -222,6 +222,19 @@ body, html {
 
 .layout-archive-blog{ 
     display: flex; 
+    flex-direction: row; 
+
+}
+
+.layout-archive-blog-tools{ 
+    width: 100%; 
+
+}
+
+.partial-blog-tools{ 
+    width: 100px; 
+    height: 100%; 
+    margin-left: auto; 
     
 }
 
