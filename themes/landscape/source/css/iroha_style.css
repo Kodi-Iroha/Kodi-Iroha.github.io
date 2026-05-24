@@ -10,7 +10,33 @@ body, html {
     display: flex; 
     flex-direction: column; 
 
+} 
+
+body::-webkit-scrollbar {
+  display: none;
+} 
+
+
+/* 外層容器：固定在最底部、寬度 100% */
+.progress-container {
+  position: fixed;
+  bottom: 0; /* 這個屬性把它移到了最底部！ */
+  left: 0;
+  z-index: 9999; /* 確保它不會被網頁的其他圖片或文字遮擋 */
+  width: 100%;
+  height: 5px; /* 進度條的粗細，可自由調整 */
+  background-color: rgb(253, 253, 253); 
+
 }
+
+/* 內層進度條：會隨著滾動而拉長的條狀物 */
+.progress-bar {
+  height: 5px;
+  background-color: rgb(217, 76, 76); /* 滾動時顯現的顏色（這裡目前是綠色） */
+  width: 0%; /* 初始畫面時寬度為 0% */ 
+
+} 
+
 
 .layout-layout-background{ 
     background-position: -15px -25px; 
@@ -236,8 +262,10 @@ body, html {
 .layout-archive-blog-tools{ 
     width: 15%; 
     height: 300px; 
-    border-radius: 15px; 
-    padding: 5px 5px; 
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+
+    text-align: center; 
 
     
     background-color: rgb(193, 204, 203); 
@@ -250,6 +278,7 @@ body, html {
     gap: 10px; 
 
     height: 100%; 
+    padding: 25px; 
 
 }
 
@@ -331,7 +360,8 @@ body, html {
 
 .LIB-title{ 
     margin: 0 0 10px 0; 
-    color: #2c3e50; 
+    color: rgb(90, 64, 100); 
+
 
 } 
 

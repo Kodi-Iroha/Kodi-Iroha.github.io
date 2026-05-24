@@ -45,4 +45,22 @@
     <%- css('fancybox/jquery.fancybox.min.css') %>
   <% } %>
   <%- css('https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css') %>
-</head>
+</head> 
+<script>
+// 當使用者滾動網頁時，觸發 moveProgressBar 函式
+window.onscroll = function() { moveProgressBar() };
+
+function moveProgressBar() {
+  // 取得使用者目前向下滾動了多少像素 (px)
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  
+  // 計算整個網頁扣掉螢幕高度後，實際上「可滾動的總高度」
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  
+  // 換算成百分比
+  var scrolled = (winScroll / height) * 100;
+  
+  // 將這個百分比動態套用到 CSS 的 width 寬度上
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script> 
