@@ -1,5 +1,15 @@
 <section class="partial-blog-tools">
     <h2>blogss</h2> 
-
+    <% if (site.tags && site.tags.length){ %>
+    <div class="global-tag-cloud">
+        <% site.tags.each(function(tag){ %>
+        <div class="article-tag tag-<%= tag.name %>">
+            <a href="<%- url_for(tag.path) %>" class="tag-link">
+            #<%= tag.name %> (<%= tag.posts.length %>)
+            </a>
+        </div>
+        <% }) %>
+    </div>
+    <% } %>
 </section>
 
