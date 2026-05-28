@@ -2,9 +2,9 @@
 title: {{ title }}
 date: {{ date }}
 tags: 
-- math 
-- biology 
-- computer  
+- Math
+- Biology 
+- Computer  
 cover: 
 description: 
 ---

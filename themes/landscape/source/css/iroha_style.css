@@ -459,10 +459,10 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 }
 
 /* 這裡開始定義不同標籤的顏色 */
-.tag-Hexo { background-color: #4e4e4e; }   /* Hexo 標籤用灰色 */
-.tag-技術 { background-color: #3498db; }    /* 技術文章用藍色 */
-.tag-生活 { background-color: #e67e22; }    /* 生活日記用橘色 */
-.tag-學習 { background-color: #27ae60; }    /* 學習筆記用綠色 */
+.tag-Biology { background-color: #f3978e; }   /* Hexo 標籤用灰色 */
+.tag-Computer { background-color: #6b6a8a; }    /* 技術文章用藍色 */
+.tag-Math { background-color: #6ecbd2; }    /* 生活日記用橘色 */
+
 
 
 .LT-main-title {
