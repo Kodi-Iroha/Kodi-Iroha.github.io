@@ -280,6 +280,11 @@ body::-webkit-scrollbar {
     height: 100%; 
     padding: 25px; 
 
+} 
+
+.partial-blog-tools{ 
+    color: #282828; 
+
 }
 
 .LIB-h1{ 
@@ -471,7 +476,7 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 .tag-link{ 
     color: #ebeeef; 
     text-decoration: none;  
-    
+
 }
 
 .LT-main-title {
