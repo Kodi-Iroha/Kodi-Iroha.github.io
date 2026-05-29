@@ -3,13 +3,14 @@
     <% if (site.tags && site.tags.length){ %>
     <div class="global-tag-cloud">
         <% site.tags.each(function(tag){ %>
-        <div class="article-tag tag-<%= tag.name %>">
-            <a href="<%- url_for(tag.path) %>" class="tag-link">
-            #<%= tag.name %> (<%= tag.posts.length %>)
+        <div class="article-tag tag-<%= tag.name.toLowerCase() %>">
+            <a href="<%- url_for(tag.path.toLowerCase()) %>" class="tag-link">
+                #<%= tag.name %> (<%= tag.posts.length %>)
             </a>
         </div>
         <% }) %>
     </div>
+
     <% } %> 
     
 </section> 
