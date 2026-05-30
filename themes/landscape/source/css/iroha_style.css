@@ -483,18 +483,25 @@ figure.highlight:hover .copy-btn { opacity: 1; }
     color: #ebeeef; 
     text-decoration: none;  
 
+} 
+
+.layout-tag{ 
+    padding-bottom: 50px; 
+    
 }
 
 .LT-main-title {
-    font-size: 2em;
+    font-size: 4em;
     color: #333; /* 標題顏色 */
     margin-bottom: 20px;
-    border-bottom: 2px dashed #ccc; 
+    padding-left: 20px; 
+
     padding-bottom: 10px;
 } 
 
 .LT-main-title span {
-    color: #ff6b6b; /* 讓標籤名字變成特別的顏色！ */
+    color: #ff6b6b; 
+
 }
 
 
@@ -504,39 +511,71 @@ figure.highlight:hover .copy-btn { opacity: 1; }
     gap: 20px; 
 } 
  
-.LT-postlink{ 
+.LT-box{ 
+    width: 400px; 
+    height: 200px; 
+
     text-decoration: none;
     color: inherit;
-    display: block; 
-    height: 100%; 
+    display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
+    
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    background-color: rgb(206, 218, 216);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;  
-
+    transition: transform 0.2s, box-shadow 0.2s; 
+    text-align: center; 
 } 
 
-.LT-poatlink:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px  15px rgba(0, 0, 0, 0.15);
+.LT-box:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
 } 
 
-
-.LT-post-title{
-    margin: 0 0 10px 0;
-    color: #2c3e50;
+.LT-box-content{ 
+    display: flex; 
+    height: 100%; 
+    width: 100%; 
 }
 
-.LT-post-date{
-    font-size: 0.9em;
-    color: #888;
+.LT-box-image{ 
+    width: 190px; 
+    height: 190px; 
+    background-color: rgb(157, 166, 165); 
+    margin: 5px 5px;
+    border-radius: 12px; 
+} 
+
+.LT-box-img{ 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 12px; 
 }
 
-.LT-post-blurb{
-    margin-top: 10px;
-    color: #555;
-    line-height: 1.5;
+.LT-box-word{ 
+    display: flex; 
+    justify-content: left; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 5px; 
+
 } 
- 
+
+.LTB-title{ 
+    margin: 0 0 10px 0; 
+    color: rgb(90, 64, 100); 
+
+} 
+
+.LTB-date{ 
+    font-size: 0.9rem; 
+    color: #888;  
+
+} 
+
+.LTB-description{ 
+    margin-top: 10px; 
+    color: #555; 
+    line-height: 1.5; 
+} 
