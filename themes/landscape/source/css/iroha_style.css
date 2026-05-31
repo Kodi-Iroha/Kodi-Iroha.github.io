@@ -275,6 +275,19 @@ body::-webkit-scrollbar {
     
     background-color: rgb(193, 204, 203); 
 
+} 
+
+.layout-tag-blog-tools{ 
+    width: 15%; 
+    height: 300px; 
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+
+    text-align: center; 
+
+    
+    background-color: rgb(193, 204, 203); 
+
 }
 
 .partial-blog{ 
@@ -386,7 +399,7 @@ body::-webkit-scrollbar {
     color: #555; 
     line-height: 1.5; 
 
-}
+} 
 
 .layout-index-tools{ 
     text-align: center; 
@@ -486,6 +499,7 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 } 
 
 .layout-tag{ 
+    
     padding-bottom: 50px; 
     
 }
@@ -506,9 +520,13 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 
 
 .LT-postlist{
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-    gap: 20px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+
+    height: 100%; 
+    padding: 25px;  
+
 } 
  
 .LT-box{ 

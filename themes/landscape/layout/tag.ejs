@@ -2,7 +2,7 @@
 
 <div class="layout-tag">
     <h1 class="LT-main-title"># <span><%= page.tag %></span></h1>
-
+    
 
     <div class="LT-postlist">
         <% page.posts.each(function(post) { %>
@@ -26,5 +26,8 @@
                 </article>
             </a>
         <% }); %>
+    </div> 
+    <div class="layout-tag-blog-tools">
+        <%- partial('_partial/blog_tools') %>
     </div>
-</div>
+</div> 
