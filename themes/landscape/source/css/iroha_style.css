@@ -272,7 +272,8 @@ body::-webkit-scrollbar {
 
     text-align: center; 
 
-    
+    padding: 5px 5px; 
+
     background-color: rgb(193, 204, 203); 
 
 } 
@@ -285,7 +286,9 @@ body::-webkit-scrollbar {
 
     text-align: center; 
     margin-left: auto; 
-    
+    padding: 5px 5px; 
+
+
     background-color: rgb(193, 204, 203); 
 
 }
@@ -495,7 +498,10 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 .tag-link{ 
     color: #ebeeef; 
     text-decoration: none;  
-
+    padding: 4px 10px;
+    margin: 0 5px 5px 0;
+    border-radius: 12px; 
+  
 } 
 
 .layout-tag{ 
