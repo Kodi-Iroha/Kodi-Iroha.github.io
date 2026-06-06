@@ -499,7 +499,7 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 } 
 
 .layout-tag{ 
-    
+    display: flex; 
     padding-bottom: 50px; 
     
 }
