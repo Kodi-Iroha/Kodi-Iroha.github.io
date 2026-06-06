@@ -284,7 +284,7 @@ body::-webkit-scrollbar {
     border-bottom-left-radius: 10px; 
 
     text-align: center; 
-
+    margin-left: auto; 
     
     background-color: rgb(193, 204, 203); 
 
