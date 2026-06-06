@@ -14,15 +14,17 @@
                         <% }else{ %>
                         <img src="" alt="">
                         <% } %> 
-                    </div>
+                    </div> 
+
                     <div class="LT-box-word">
                         <h2 class="LTB-title"><%= post.title %></h2>
                         <span class="LTB-date"><%= post.date.format('YYYY-MM-DD') %></span> 
                         <p class="LTB-description"><%= post.description %></p>
-                    </div> 
-                    <div>
-                        
+                        <div class="LT-post-tag">
+                        <%- partial('_partial/post/tag', {post: post}) %>
                     </div>
+                    </div> 
+                    
                 </article>
             </a>
         <% }); %>
