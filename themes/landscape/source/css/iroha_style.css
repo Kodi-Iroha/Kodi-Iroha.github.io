@@ -246,9 +246,17 @@ body::-webkit-scrollbar {
     text-align: center; 
     padding: 40px 40px; 
     color: rgb(50, 144, 178); 
-
     font-size: 3rem; 
 
+} 
+
+.layout-tools-h1{ 
+    margin: 0 auto; 
+    text-align: center; 
+    padding: 40px 40px; 
+    color: rgb(50, 144, 178); 
+
+    font-size: 3rem; 
 } 
 
 .layout-archive-blog{ 
@@ -479,7 +487,7 @@ figure.highlight:hover .copy-btn { opacity: 1; }
   text-decoration: none;
   color: #fff; /* 文字設為白色，這樣背景深色才看得清楚 */
   transition: opacity 0.3s;
-}
+} 
 
 .article-tag:hover {
   opacity: 0.8;
@@ -602,4 +610,8 @@ figure.highlight:hover .copy-btn { opacity: 1; }
     margin-top: 10px; 
     color: #555; 
     line-height: 1.5; 
+} 
+
+.layout-tools{ 
+
 } 
