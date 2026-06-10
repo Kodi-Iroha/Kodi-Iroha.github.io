@@ -613,5 +613,32 @@ figure.highlight:hover .copy-btn { opacity: 1; }
 } 
 
 .layout-tools{ 
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: row; 
+    margin-left: 10px; 
+    justify-content: center; 
+    margin-bottom: 30px; 
+    
+} 
+
+.layout-tools-box{ 
+    height: 200px; 
+    width: 300px; 
+    background-color: #3392b4; 
+    margin: 5px 5px; 
+    border-radius: 10px; 
 
 } 
+
+.layout-tools-box-link{ 
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+    
+    color: white;
+
+} 
+ 
