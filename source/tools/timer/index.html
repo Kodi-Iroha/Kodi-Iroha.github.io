@@ -1,0 +1,63 @@
+---
+title: 計時器
+author: 
+layout: tools
+---
+
+<section class="tools-page">
+  <h1>計時器</h1>
+  <div class="timer-box">
+    <div id="timer-display" class="timer-display">00:00:00</div>
+    <div class="timer-controls">
+      <button id="timer-start">開始</button>
+      <button id="timer-stop">停止</button>
+      <button id="timer-reset">重置</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const display = document.getElementById('timer-display');
+  const startBtn = document.getElementById('timer-start');
+  const stopBtn = document.getElementById('timer-stop');
+  const resetBtn = document.getElementById('timer-reset');
+
+  let timer = null;
+  let seconds = 0;
+
+  function formatTime(sec) {
+    const h = String(Math.floor(sec / 3600)).padStart(2, '0');
+    const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0');
+    const s = String(sec % 60).padStart(2, '0');
+    return `${h}:${m}:${s}`;
+  }
+
+  function update() {
+    seconds += 1;
+    display.textContent = formatTime(seconds);
+  }
+
+  startBtn.addEventListener('click', function() {
+    if (!timer) {
+      timer = setInterval(update, 1000);
+    }
+  });
+
+  stopBtn.addEventListener('click', function() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  });
+
+  resetBtn.addEventListener('click', function() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+    seconds = 0;
+    display.textContent = formatTime(seconds);
+  });
+})();
+</script>

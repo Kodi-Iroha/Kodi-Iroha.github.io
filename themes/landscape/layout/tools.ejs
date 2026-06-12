@@ -1,14 +1,16 @@
 <h1 class="layout-tools-h1">Tools</h1>
 
+<% if (page.path === 'tools/index.html') { %>
 <div class="layout-tools"> 
     <div class="layout-tools-box">
-      <a href="" class="layout-tools-box-link" >timer</a>
+      <a href="/tools/timer/" class="layout-tools-box-link">timer</a>
     </div>
     <div  class="layout-tools-box">
-      <a href="" class="layout-tools-box-link" >music</a> 
+      <a href="/tools/music/" class="layout-tools-box-link">music</a> 
     </div>
 </div>
- 
+<% } %>
 
-    
- 
+<div class="layout-tools-content">
+  <%- page.content %>
+</div>
