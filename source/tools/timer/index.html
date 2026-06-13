@@ -9,28 +9,56 @@ layout: tools_timer
 <section class="tools-page"> 
   <div class="timer-background"></div>
 
-  <div class="timer-circle">
+  <div class="timer-container">
+    <!-- 左側面板 -->
+    <div class="left-panel">
+      <div class="panel-section">
+        <h3>快速選擇</h3>
+        <div class="quick-select">
+          <button class="quick-btn" data-minutes="5">5分</button>
+          <button class="quick-btn" data-minutes="15">15分</button>
+          <button class="quick-btn active" data-minutes="25">25分</button>
+          <button class="quick-btn" data-minutes="45">45分</button>
+          <button class="quick-btn" data-minutes="60">60分</button>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <h3>自訂分鐘</h3>
+        <input type="number" id="work-input" value="25" min="1" max="180">
+      </div>
+    </div>
+
+    <!-- 中央計時器 -->
+    <div class="timer-circle">
       <svg class="progress-svg" width="280" height="280">
-          <circle class="progress-bg" cx="140" cy="140" r="130"></circle>
-          <circle class="progress-bar" cx="140" cy="140" r="130"></circle>
+        <circle class="progress-bg" cx="140" cy="140" r="130"></circle>
+        <circle class="progress-bar" cx="140" cy="140" r="130"></circle>
       </svg>
 
       <div class="inner-content">
-          <div class="settings">
-              <label for="work-input">Focus: </label>
-              <input type="number" id="work-input" value="25" min="1" max="180">
-              <span>m</span>
-          </div>
+        <div class="time-display-group">
+          <span id="time-display"></span>
+        </div>
 
-          <div class="time-display-group">
-              <span id="time-display">25:00</span>
-          </div>
-
-          <div class="controls">
-              <button id="start-btn">START</button>
-              <button id="reset-btn">RESET</button>
-          </div>
+        <div class="controls">
+          <button id="start-btn" class="btn-primary"></button>
+          <button id="reset-btn" class="btn-secondary"></button>
+        </div>
       </div>
+    </div>
+
+    <!-- 右側面板 -->
+    <div class="right-panel">
+      <div class="stats-section">
+        <h3>今日專注</h3>
+        <div class="today-focus">
+          <span id="today-minutes">0</span>
+          <span class="unit">分鐘</span>
+        </div>
+        <p class="motivation">「你能做到偉大的事。」</p>
+      </div>
+    </div>
   </div>
 </section>
 

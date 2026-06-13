@@ -1,140 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+
 .tools-page {
-    height: 100vh; 
+    min-height: 100vh; 
     width: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative; 
-    margin-bottom: 30px; 
-    margin-top: 10px; 
-
-
+    padding: 20px;
+    overflow: hidden;
 }  
 
 .timer-background {  
-    
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; 
-    background: url('../image/icon.jpg'); 
-    background-repeat: no-repeat; 
-    background-size: contain;  
+    background-image: url(../image/icon.jpg);
     background-position: center center; 
-    filter: blur(10px);
-    z-index: -1; /* 確保圖片在最底層 */
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-attachment: scroll;
+    z-index: -1;
 }
 
-/* 圓形計時器外殼，加上霓虹粉紅發光效果 */
+/* 主容器：左中右三列佈局 */
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* 左側面板 */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 280px;
+}
+
+.panel-section {
+    background: rgba(30, 50, 70, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-section h3 {
+    color: #a0c4e8;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* 模式按鈕 */
+.mode-btn {
+    display: block;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(2px);
+}
+
+.mode-btn.active {
+    background: rgba(100, 180, 220, 0.4);
+    border-color: rgba(100, 180, 220, 0.8);
+    color: #64b4dc;
+    box-shadow: 0 0 10px rgba(100, 180, 220, 0.2);
+}
+
+/* 快速選擇按鈕 */
+.quick-select {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quick-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #b8d4e8;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.quick-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.quick-btn.active {
+    background: rgba(64, 200, 240, 0.5);
+    border-color: rgba(64, 200, 240, 0.9);
+    color: #40c8f0;
+    box-shadow: 0 0 8px rgba(64, 200, 240, 0.3);
+}
+
+/* 自訂分鐘輸入 - 移除上下按鈕 */
+#work-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* 移除 number input 的上下按鈕 */
+#work-input::-webkit-outer-spin-button,
+#work-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#work-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#work-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(100, 180, 220, 0.6);
+    box-shadow: 0 0 8px rgba(100, 180, 220, 0.2);
+}
+
+/* 中央圓形計時器 */
 .timer-circle {
     position: relative;
-    width: 280px;
-    height: 280px;
-    margin: 0 auto;
-    border-radius: 50%;
-
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
 }
 
 .progress-svg {
     transform: rotate(-90deg);
+    filter: drop-shadow(0 4px 20px rgba(100, 180, 220, 0.15));
 }
 
 circle {
     fill: transparent;
-    stroke-width: 10; /* 稍微加粗更有動漫線條感 */
+    stroke-width: 12;
 }
 
 .progress-bg {
-    stroke: rgba(255, 255, 255, 0.15); /* 半透明白底 */
+    stroke: rgba(255, 255, 255, 0.08);
 }
 
 .progress-bar {
-    stroke: #ff4757; /* 經典動漫熱血紅，你也可以改成 #00d2d3 (初音綠) */
+    stroke: #40c8f0;
     stroke-linecap: round;
-    stroke-dasharray: 816.8; /* 2 * Math.PI * 130 */
+    stroke-dasharray: 816.8;
     stroke-dashoffset: 0;
-    transition: stroke-dashoffset 0.1s linear;
-
+    transition: stroke-dashoffset 0.1s linear, r 0.1s linear;
 }
 
-/* 中央內容面板：毛玻璃效果 (Glassmorphism) */
+/* 中央內容面板 */
 .inner-content {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 260px;
-    height: 260px;
+    top: 20px;
+    left: 20px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    /* 半透明黑色底，並加上模糊，讓背景透出來但又不干擾文字 */
-    background: rgba(15, 15, 25, 0.55);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-/* 設定區 */
-.settings {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.9rem;
-    color: #e0e0e0;
-    font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.settings input {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    padding: 4px 6px;
-    border-radius: 6px;
-    width: 40px;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: bold;
-    outline: none;
+    gap: 20px;
+    background: rgba(10, 22, 40, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(100, 180, 220, 0.2);
+    box-shadow: inset 0 0 30px rgba(100, 180, 220, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* 時間顯示 */
+.time-display-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #time-display {
-    font-size: 3.5rem;
-    font-weight: 900; /* 超粗體，很有動漫戰鬥力儀表板的感覺 */
+    font-size: 4rem;
+    font-weight: 900;
     color: #ffffff;
     line-height: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 20px rgba(100, 180, 220, 0.4), 
+                 0 0 40px rgba(100, 180, 220, 0.2);
+    letter-spacing: 2px;
+    font-family: 'Monaco', 'Courier New', monospace;
 }
 
 /* 控制按鈕 */
-.controls button {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 8px 18px;
-    margin: 0 6px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: 0.3s;
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
 }
 
-#start-btn { 
-    background: #ff4757; 
+.controls button {
     border: none;
-    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+    padding: 12px 28px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
 }
-#start-btn:hover { 
-    background: #ff6b81; 
+
+#start-btn {
+    background: linear-gradient(135deg, #64b4dc 0%, #40c8f0 100%);
+    color: white;
+    min-width: 100px;
+    box-shadow: 0 4px 15px rgba(100, 180, 220, 0.4);
+}
+
+#start-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(100, 180, 220, 0.6);
+}
+
+#start-btn:active {
+    transform: scale(0.95);
+}
+
+#reset-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #a0c4e8;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    min-width: 100px;
+}
+
+#reset-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
     transform: scale(1.05);
 }
-#reset-btn:hover { 
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
+
+#reset-btn:active {
+    transform: scale(0.95);
+}
+
+/* 右側面板 - 統計 */
+.right-panel {
+    width: 280px;
+}
+
+.stats-section {
+    background: rgba(30, 50, 70, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.stats-section h3 {
+    color: #a0c4e8;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.today-focus {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+#today-minutes {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #40c8f0;
+    text-shadow: 0 0 10px rgba(64, 200, 240, 0.4);
+}
+
+.today-focus .unit {
+    font-size: 0.95rem;
+    color: #80a8c8;
+    font-weight: 600;
+}
+
+.motivation {
+    color: #7c9cba;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* 響應式設計 */
+@media (max-width: 1024px) {
+    .timer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-page {
+        padding: 10px;
+    }
+
+    .timer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .timer-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .inner-content {
+        top: 15px;
+        left: 15px;
+        width: 230px;
+        height: 230px;
+        gap: 15px;
+    }
+
+    #time-display {
+        font-size: 3rem;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+        max-width: none;
+    }
+
+    .quick-select {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .quick-btn {
+        flex: 1;
+        min-width: 60px;
+    }
 } 
