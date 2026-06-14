@@ -3,7 +3,6 @@ const timeDisplay = document.getElementById('time-display');
 const startBtn = document.getElementById('start-btn');
 const resetBtn = document.getElementById('reset-btn');
 const progressBar = document.querySelector('.progress-bar');
-const progressBg = document.querySelector('.progress-bg');
 const todayMinutes = document.getElementById('today-minutes');
 
 // 快速選擇按鈕
@@ -13,10 +12,7 @@ const quickBtns = document.querySelectorAll('.quick-btn');
 startBtn.textContent = '開始';
 resetBtn.textContent = '重設';
 
-const CIRCUMFERENCE = 2 * Math.PI * 130; // 圓周長
-const MIN_RADIUS = 50; // 進度圈最小半徑
-const MAX_RADIUS = 130; // 進度圈最大半徑
-const RADIUS_RANGE = MAX_RADIUS - MIN_RADIUS;
+const CIRCUMFERENCE = 2 * Math.PI * 150; // 圓周長
 
 let timerInterval = null;
 let totalSeconds = 25 * 60;
@@ -43,13 +39,6 @@ function updateDisplay() {
     // 進度條偏移（進度環效果）
     const offset = CIRCUMFERENCE * (1 - progressPercentage);
     progressBar.style.strokeDashoffset = offset;
-    
-    // 計算半徑：隨著時間流逝，圓環從大變小
-    const currentRadius = MAX_RADIUS - (RADIUS_RANGE * (1 - progressPercentage));
-    
-    // 更新兩個圓的半徑
-    progressBar.setAttribute('r', currentRadius);
-    progressBg.setAttribute('r', currentRadius);
 }
 
 // 更新今日統計

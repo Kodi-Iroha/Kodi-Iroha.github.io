@@ -5,7 +5,9 @@
 } 
 
 
-.tools-page {
+.tools-page { 
+    margin-bottom: 30px; 
+    
     min-height: 100vh; 
     width: 100%; 
     display: flex;
@@ -25,9 +27,10 @@
     background-image: url(../image/icon.jpg);
     background-position: center center; 
     background-repeat: no-repeat; 
-    background-size: contain;
+    background-size: cover;
     background-attachment: scroll;
-    z-index: -1;
+    filter: blur(12px);
+    z-index: -1; 
 }
 
 /* 主容器：左中右三列佈局 */
@@ -165,6 +168,12 @@
 }
 
 .progress-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
     transform: rotate(-90deg);
     filter: drop-shadow(0 4px 20px rgba(100, 180, 220, 0.15));
 }
@@ -189,10 +198,10 @@ circle {
 /* 中央內容面板 */
 .inner-content {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 280px;
-    height: 280px;
+    top: 15px;
+    left: 15px;
+    width: 290px;
+    height: 290px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
