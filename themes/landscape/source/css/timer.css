@@ -53,28 +53,33 @@
 .left-panel {
 
     position: absolute;
-    left: 0;                
+    left: 17%; 
+
     top: 50%;
     transform: translateY(-50%); 
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 280px;
+    width: 200px;  
+
+
     z-index: 3;              
 
 }
 
 .panel-section {
-    background: rgba(30, 50, 70, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #4e4e4e; 
+
+
+
     border-radius: 15px;
     padding: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+
 }
 
-.panel-section h3 {
-    color: #a0c4e8;
+.panel-section h2 {
+    color: #ffffff;
     font-size: 0.85rem;
     font-weight: bold;
     margin-bottom: 12px;
@@ -82,69 +87,16 @@
     text-transform: uppercase;
 }
 
-/* 模式按鈕 */
-.mode-btn {
-    display: block;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.08);
-    color: #e0e0e0;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 10px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
-}
 
-.mode-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateX(2px);
-}
 
-.mode-btn.active {
-    background: rgba(100, 180, 220, 0.4);
-    border-color: rgba(100, 180, 220, 0.8);
-    color: #64b4dc;
-    box-shadow: 0 0 10px rgba(100, 180, 220, 0.2);
-}
-
-/* 快速選擇按鈕 */
-.quick-select {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.quick-btn {
-    background: rgba(255, 255, 255, 0.08);
-    color: #b8d4e8;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.quick-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.quick-btn.active {
-    background: rgba(64, 200, 240, 0.5);
-    border-color: rgba(64, 200, 240, 0.9);
-    color: #40c8f0;
-    box-shadow: 0 0 8px rgba(64, 200, 240, 0.3);
-}
 
 /* 自訂分鐘輸入 - 移除上下按鈕 */
 #work-input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #ff3652; 
+
+    border: 1px solid #ff6d5d; 
+
     color: #ffffff;
     padding: 10px 12px;
     border-radius: 8px;
@@ -155,19 +107,9 @@
     transition: all 0.3s ease;
 }
 
-/* 移除 number input 的上下按鈕 */
-#work-input::-webkit-outer-spin-button,
-#work-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
 
-#work-input:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(100, 180, 220, 0.6);
-    box-shadow: 0 0 8px rgba(100, 180, 220, 0.2);
-}
+
 
 /* 中央圓形計時器 */
 .timer-circle {
@@ -198,7 +140,8 @@ circle {
 }
 
 .progress-bar {
-    stroke: #40c8f0;
+    stroke: #ff3652; 
+
     stroke-linecap: round;
     stroke-dasharray: 816.8;
     stroke-dashoffset: 0;
@@ -218,12 +161,21 @@ circle {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background: rgba(10, 22, 40, 0.7);
+    background: #4e4e4e; 
+
+
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(100, 180, 220, 0.2);
-    box-shadow: inset 0 0 30px rgba(100, 180, 220, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
-}
+
+
+    border: 1px solid rgba(100, 180, 220, 0.2); 
+
+} 
+
+#work-input::-webkit-outer-spin-button,
+#work-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+} 
 
 /* 時間顯示 */
 .time-display-group {
@@ -236,9 +188,10 @@ circle {
     font-size: 4rem;
     font-weight: 900;
     color: #ffffff;
-    line-height: 1;
-    text-shadow: 0 0 20px rgba(100, 180, 220, 0.4), 
-                 0 0 40px rgba(100, 180, 220, 0.2);
+
+    user-select: none; 
+
+
     letter-spacing: 2px;
     font-family: 'Monaco', 'Courier New', monospace;
 }
@@ -263,32 +216,26 @@ circle {
 }
 
 #start-btn {
-    background: linear-gradient(135deg, #64b4dc 0%, #40c8f0 100%);
-    color: white;
+    background-color: #ff3652;
+    color: #ffffff;
     min-width: 100px;
-    box-shadow: 0 4px 15px rgba(100, 180, 220, 0.4);
+
 }
 
-#start-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 20px rgba(100, 180, 220, 0.6);
-}
 
-#start-btn:active {
+#start-btn:active { 
     transform: scale(0.95);
 }
 
 #reset-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: #a0c4e8;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: #ff3652; 
+
+    color: #ffffff;
+
     min-width: 100px;
 }
 
-#reset-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.05);
-}
+
 
 #reset-btn:active {
     transform: scale(0.95);
