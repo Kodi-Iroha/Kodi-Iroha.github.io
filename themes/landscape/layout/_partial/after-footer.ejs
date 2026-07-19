@@ -1,27 +1,3 @@
 <!-- 1. 先引入 jQuery -->
 <script src="/js/jquery-3.6.4.min.js"></script>
 
-<!-- 2. 再加入複製按鈕的邏輯 -->
-<script>
-  console.log("複製按鈕代碼開始執行...");
-  window.addEventListener("load", function() {
-    var blocks = document.querySelectorAll('figure.highlight');
-    console.log("找到 " + blocks.length + " 個程式碼區塊");
-    
-    blocks.forEach(function(block) {
-      block.style.position = 'relative';
-      var btn = document.createElement('button');
-      btn.className = 'copy-btn';
-      btn.innerText = 'Copy';
-      block.appendChild(btn);
-      
-      btn.addEventListener('click', function() {
-        var code = block.querySelector('td.code').innerText;
-        navigator.clipboard.writeText(code).then(function() {
-          btn.innerText = 'Copied!';
-          setTimeout(function() { btn.innerText = 'Copy'; }, 2000);
-        });
-      });
-    });
-  });
-</script>

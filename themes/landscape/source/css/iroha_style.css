@@ -349,8 +349,7 @@ body::-webkit-scrollbar {
 
 
 .LIB-post{ 
-    /* display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+
     display: flex;          
     flex-wrap: wrap;   
     justify-content: center; 
@@ -359,6 +358,51 @@ body::-webkit-scrollbar {
     
 }
 
+/* 文章內容樣式 */
+.article-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    color: #222;
+}
+
+.article-inner p {
+    margin: 1.25rem 0;
+    line-height: 1.8;
+}
+
+.article-inner h1,
+.article-inner h2,
+.article-inner h3,
+.article-inner h4,
+.article-inner h5,
+.article-inner h6 {
+    margin: 1.75rem 0 1rem;
+    font-weight: 700;
+}
+
+.article-inner h2,
+.article-inner h3,
+.article-inner h4 {
+    scroll-margin-top: 100px;
+}
+
+.article-inner a.headerlink {
+    display: none !important;
+}
+
+.article-inner figure.highlight {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+article figure.highlight table {
+    width: auto;
+}
+
+
 /* 2. 重點在這裡！把寬度、顏色、圓角都交給 a 標籤 (.post-link) */
 .LIB-box{
     width: 400px; 
@@ -366,11 +410,11 @@ body::-webkit-scrollbar {
 
     text-decoration: none;
     color: inherit;
-    display: block; /* 這個很重要！讓超連結變成一個乖乖的方塊 */
+    display: block; 
     
     box-sizing: border-box;
     background-color: #fe9a8a;
-    border-radius: 12px;
+    border-radius: 5px;
 
     transition: transform 0.2s, box-shadow 0.2s; 
     text-align: center; 
@@ -389,11 +433,11 @@ body::-webkit-scrollbar {
 }
 
 .LIB-box-image{ 
-    width: 190px; 
+    max-width: 190px; 
     height: 190px; 
     background-color: #5eccb0; 
     margin: 5px 5px;
-    border-radius: 12px; 
+    border-radius: 5px; 
 
 }
 
@@ -401,7 +445,7 @@ body::-webkit-scrollbar {
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
-    border-radius: 12px; 
+    border-radius: 5px; 
 }
 
 .LIB-box-word{ 
@@ -467,6 +511,11 @@ body::-webkit-scrollbar {
     border: 2px solid #666f78;
 } 
 
+.article-inner a { 
+    color: inherit; 
+    text-decoration: underline dotted; 
+    
+} 
 
 .article-footer {
   margin-top: 2rem;
