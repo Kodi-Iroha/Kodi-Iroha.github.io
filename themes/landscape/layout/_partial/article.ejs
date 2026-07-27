@@ -5,21 +5,23 @@
 
     <div class="e-content article-entry" itemprop="articleBody">
       <%- post.content %>
-    </div>
 
-<footer class="article-footer">
-  <div class="article-footer-tags">
-    <% if (post.tags && post.tags.length){ %>
-      <% post.tags.each(function(tag){ %>
-        <a href="<%- url_for(tag.path.toLowerCase()) %>" class="tag-link tag-<%= tag.name %>">
-          #<%= tag.name %>
-        </a>
-      <% }) %>
-    <% } %>
-  </div>
-</footer> 
+      <hr>
 
-  </div>
 
-</article>
+      <div class="article-footer-tags"> 
+        
+        <% if (post.tags && post.tags.length){ %>
+          <% post.tags.each(function(tag){ %>
+            <a href="<%- url_for(tag.path.toLowerCase()) %>" class="tag-link tag-<%= tag.name %>">
+              #<%= tag.name %>
+            </a>
+          <% }) %>
+        <% } %>
+      </div>
+    </div> 
+
+  </div> 
+
+</article> 
 

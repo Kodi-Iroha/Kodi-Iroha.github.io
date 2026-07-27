@@ -359,49 +359,9 @@ body::-webkit-scrollbar {
 }
 
 /* 文章內容樣式 */
-.article-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 20px 40px;
-    color: #222;
+.article-entry {
+    text-indent: 0;
 }
-
-.article-inner p {
-    margin: 1.25rem 0;
-    line-height: 1.8;
-}
-
-.article-inner h1,
-.article-inner h2,
-.article-inner h3,
-.article-inner h4,
-.article-inner h5,
-.article-inner h6 {
-    margin: 1.75rem 0 1rem;
-    font-weight: 700;
-}
-
-.article-inner h2,
-.article-inner h3,
-.article-inner h4 {
-    scroll-margin-top: 100px;
-}
-
-.article-inner a.headerlink {
-    display: none !important;
-}
-
-.article-inner figure.highlight {
-    background: #f7f7f7;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    overflow-x: auto;
-}
-
-article figure.highlight table {
-    width: auto;
-}
-
 
 /* 2. 重點在這裡！把寬度、顏色、圓角都交給 a 標籤 (.post-link) */
 .LIB-box{
@@ -424,6 +384,22 @@ article figure.highlight table {
     transform: translateY(-5px); 
     
 }
+
+.article-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 0 5px 5px 0;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #ffffff; 
+  transition: opacity 0.3s;
+} 
+
+.article-tag:hover {
+  opacity: 0.8;
+} 
+
 
 .LIB-box-content{ 
     display: flex; 
@@ -497,55 +473,6 @@ article figure.highlight table {
 }
 
 
-.article-inner {
-    background-color: #ffffff; /* 紙張的顏色 */
-    padding: 40px;            /* 讓內容跟邊緣有間距，才不會太擠 */
-    margin-top: 20px;         /* 和上方的 Header 拉開距離 */
-    border-radius: 8px;       /* 稍微圓角，看起來比較溫柔 */
-
-    max-width: 800px;         /* 限制寬度，這樣閱讀起來不會因為太寬而很累 */
-    margin-left: auto;        /* 水平置中 */
-    margin-right: auto; 
-    margin-bottom: 50px; 
-
-    border: 2px solid #666f78;
-} 
-
-.article-inner a { 
-    color: inherit; 
-    text-decoration: underline dotted; 
-    
-} 
-
-.article-footer {
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee; /* 加一條淡淡的橫線，區分內文 */
-  display: flex;
-  justify-content: flex-start; /* 讓標籤靠左對齊 */
-}
-
-.article-footer-tags {
-  /* 如果你的 tags 有特定的 class，可以在這裡調整標籤的圓角、顏色 */
-  font-size: 0.9rem;
-} 
-
-/* 預設的標籤樣式 */
-.article-tag {
-  display: inline-block;
-  padding: 4px 10px;
-  margin: 0 5px 5px 0;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: #fff; /* 文字設為白色，這樣背景深色才看得清楚 */
-  transition: opacity 0.3s;
-} 
-
-.article-tag:hover {
-  opacity: 0.8;
-}
-
 .global-tag-cloud{ 
     text-decoration: none; 
 
@@ -557,10 +484,12 @@ article figure.highlight table {
 .tag-math { background-color: #3b3d66; }    /* 生活日記用橘色 */
 
 .tag-link{ 
-    color: #ebeeef; 
+    color: #ffffff !important; 
     text-decoration: none;  
     padding: 4px 10px;
-    margin: 0 5px 5px 0;
+    margin-left: 5px !important; 
+    margin-right: 5px !important; 
+
     border-radius: 12px; 
   
 } 
