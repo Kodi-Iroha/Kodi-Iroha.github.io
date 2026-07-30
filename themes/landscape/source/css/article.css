@@ -73,11 +73,11 @@
 
 
 .article-entry img {
-  display: block;
+  display: block; 
   max-width: 100%;
-  height: auto;
-  margin: 1.2rem auto;
-  border-radius: 10px;
+  height: auto; 
+  margin: 10px auto; 
+  
 }
 
 /* variable */
