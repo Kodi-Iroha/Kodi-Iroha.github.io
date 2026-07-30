@@ -2,10 +2,8 @@
 title: {{ title }}
 date: {{ date }}
 tags: 
-- math
-- biology 
-- computer 
-- study   
+- interest 
+- study
 cover: 
 description: 
 ---

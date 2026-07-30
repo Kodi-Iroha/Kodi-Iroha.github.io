@@ -274,8 +274,8 @@ body::-webkit-scrollbar {
 }
 
 .layout-archive-blog-tools{ 
-    width: min(288px, 100%); 
-    min-height: 300px; 
+    width: 190px; 
+    height: 300px; 
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px; 
     padding: 18px 16px; 
@@ -292,8 +292,8 @@ body::-webkit-scrollbar {
 }
 
 .layout-tag-blog-tools{ 
-    width: min(288px, 100%); 
-    min-height: 300px; 
+    width: 190px; 
+    height: 300px; 
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     padding: 18px 16px; 
@@ -479,9 +479,9 @@ body::-webkit-scrollbar {
 }
 
 /* 這裡開始定義不同標籤的顏色 */
-.tag-biology { background-color: #c3313e; }   /* Hexo 標籤用灰色 */
-.tag-computer { background-color: #308eb1; }    /* 技術文章用藍色 */
-.tag-math { background-color: #3b3d66; }    /* 生活日記用橘色 */
+.tag-interest { background-color: #5c3c61; } 
+.tag-study { background-color: #6d9dc5; }  
+
 
 .tag-link{ 
     color: #ffffff !important; 

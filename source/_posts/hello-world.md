@@ -2,9 +2,7 @@
 title: Hello World 
 date: 2026-03-31 17:54:00
 tags:
-  - math 
-  - computer 
-  - biology 
+  - study 
 cover: /images/test2.jpg
 --- 
 
