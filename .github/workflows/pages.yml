@@ -3,7 +3,7 @@ name: Pages
 on:
   push:
     branches:
-      - Project-Iroha # default branch
+      - main
 
 jobs:
   build:
