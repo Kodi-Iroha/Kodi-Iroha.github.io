@@ -105,5 +105,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://github.com/ryu-opal/ryu-opal.github.io.git
-  branch: hexo-deploy
+  repository: https://github.com/Kodi-Iroha/Project-Iroha.git
+  branch: Project-Iroha
