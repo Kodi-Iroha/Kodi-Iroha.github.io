@@ -21,7 +21,7 @@
                 <article class="LIB-box-content">
                     <div class="LIB-box-image">
                         <% if (post.cover) { %>
-                        <img src="<%= post.cover%>" alt="cover" class="LIB-box-img">
+                        <img src="<%= url_for(post.cover) %>" alt="cover" class="LIB-box-img">
                         <% }else{ %>
                         <img src="" alt="">
                         <% } %> 

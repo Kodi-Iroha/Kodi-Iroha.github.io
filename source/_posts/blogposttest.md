@@ -8,7 +8,6 @@ cover: /images/test_cover.jpg
 description: test for blogpost
 
 ---
-
 # Project Iroha - 互動式技術文件庫
 
 一個結合 **VitePress** 和 **Vue** 的現代技術文檔系統，專為清晰、互動式的技術教學設計。
@@ -70,5 +69,5 @@ hihi
 print("Hello Iroha")
 ``` 
 
-![iroha](../images/article_image/HNlfK_dbEAAYDfT.jpg) 
+![iroha](/images/article_image/HNlfK_dbEAAYDfT.jpg) 
 
